@@ -1,0 +1,15 @@
+header {
+  height: 20vh;
+  display: flex;
+  background-color: blue;
+  justify-content: center;
+  align-content: center;
+  color: whitesmoke;
+  flex-wrap: wrap;
+}
+
+.container {
+  border: 3px solid red;
+  width: 30vh;
+  height: 100vh;
+}
