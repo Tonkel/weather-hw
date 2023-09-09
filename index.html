@@ -15,23 +15,29 @@
       <aside class="container">
         <div id="search-form">
           <h2>Seach for a City:</h2>
-          <input type="text" placeholder="San Diego" />
-          <button>Search</button>
-          <ul id="recent-searches">
-            <li>hi</li>
-            <li>there</li>
-            <li>friend</li>
-          </ul>
+          <input id="search-input" type="text" placeholder="San Diego" />
+          <button id="search-button">Search</button>
+          <ul id="recent-searches"></ul>
         </div>
       </aside>
 
-      <div class="container">
-        <h2>City MM/DD/YYY</h2>
-        <p>temp:</p>
-        <p>wind:</p>
-        <p>humidity:</p>
+      <div class="container-2">
+        <div class="container-3">
+          <h2>City MM/DD/YYY</h2>
+          <p>temp:</p>
+          <p>wind:</p>
+          <p>humidity:</p>
+        </div>
+
+        <div class="container-4">
+          <h2>5-Day Forecast</h2>
+        </div>
       </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>
+      dayjs().format();
+    </script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
