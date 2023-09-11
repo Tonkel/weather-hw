@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  border: 2px solid red;
 }
 
 header {
@@ -18,20 +19,28 @@ main {
 }
 
 .container {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   width: 30vh;
   height: 100vh;
 }
 
 .container-2 {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   width: 100%;
   height: 100vh;
   display: block;
 }
 
 .container-4 {
-  border: 3px solid red;
+  /* border: 3px solid red; */
+  display: flex;
   width: 100%;
   height: 30vh;
+}
+
+.card {
+  height: 200px;
+  width: 100px;
+  background-color: aquamarine;
+  color: antiquewhite;
 }
