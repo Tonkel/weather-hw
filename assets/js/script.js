@@ -70,10 +70,10 @@ function makeCards(city) {
     //for statement to isolate only the 12pm timestamps
     for (obj in dataList) {
       if (dataList[obj].dt_txt.includes("12:00:00")) {
-        console.log(dataList[obj]);
         //data
         var date2 = dayjs(dataList[obj].dt_txt).format("M/D/YYYY");
-        var icon = dataList[obj].weather[0].icon;
+        var iconID = dataList[obj].weather[0].icon;
+        var iconSRC = `https://openweathermap.org/img/wn/${iconID}@2x.png`;
         var temp = dataList[obj].main.temp;
         var wind = dataList[obj].wind.speed;
         var humidity = dataList[obj].main.humidity;
@@ -81,7 +81,7 @@ function makeCards(city) {
         //create div to put in flex container
         var divEl = document.createElement("div");
         //build
-        divEl.setAttribute("class", ".card");
+        divEl.setAttribute("class", "card");
         //place
         forecastContainer.appendChild(divEl);
 
@@ -90,19 +90,19 @@ function makeCards(city) {
         divEl.appendChild(dateEl);
 
         var iconEl = document.createElement("i");
-        iconEl.innerHTML = icon;
+        iconEl.innerHTML = `<img src=${iconSRC} />`;
         divEl.appendChild(iconEl);
 
         var tempEL = document.createElement("p");
-        tempEL.textContent = temp;
+        tempEL.textContent = `Temp: ${temp}`;
         divEl.appendChild(tempEL);
 
         var windEl = document.createElement("p");
-        windEl.textContent = wind;
+        windEl.textContent = `Wind: ${wind}mph`;
         divEl.appendChild(windEl);
 
         var humidEl = document.createElement("p");
-        humidEl.textContent = humidity;
+        humidEl.textContent = `Humidity: ${humidity}`;
         divEl.appendChild(humidEl);
       }
     }
@@ -118,7 +118,7 @@ searchButtonEl.addEventListener("click", function () {
   makeCards(searchinput);
 });
 
-//ge/display data on previous searches
+//display data on previous searches
 sidebarEl.addEventListener("click", function (event) {
   element = event.target;
   city = event.target.textContent;
